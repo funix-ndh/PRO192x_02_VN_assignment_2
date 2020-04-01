@@ -34,7 +34,7 @@ class GradeStudent {
     private static double homework(final Scanner scanner) {
         System.out.println("Homework:");
 
-        // retry again util valid weight
+        // retry until valid weight
         int weight;
         do {
             weight = getWeight(scanner);
@@ -134,6 +134,7 @@ class GradeStudent {
     private static int getWeight(final Scanner scanner) {
         System.out.print("Weight (0-100)? ");
         final int weight = scanner.nextInt();
+        // weight must in range [0-100]
         return weight < 0 || weight > 100 ? getWeight(scanner) : weight;
     }
 }
